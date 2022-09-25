@@ -1,26 +1,30 @@
 onload = function() {
-    dorw();
+    draw();
 };
 
 var cvs;
 var length = 30;
 var radius = 100;
-var center = [200, 100];
+var center = [100, 300];
+// 5つの点が参照できる
+// 現在地から線を引いて移動させる
+// 移動した場所の長さが未満なら、次の点への残りの線を引く
 
-function dorw(){
-    var canvas = document.getElementById('DorwStar');
+
+function draw(){
+    var canvas = document.getElementById('DrowStar');
     if (!canvas || !canvas.getContext) {
         return false;
     }
     cvs = canvas.getContext('2d');
 
     // starの描画をする(黒)
-    cvs.clearRect(0, 0, 200, 200);
+    cvs.clearRect(0, 200, 200, 400);
     cvs.beginPath();
-    for (let i = 0; i <= 2*Math.PI; i = 2*Math.PI/5){
+    for (let i = 0; i <= 4*Math.PI; i += 4*Math.PI/5){
         cvs.lineTo(
-            center[0] + radius * Math.cos(i),
-            center[0] + radius * Math.sin(i)
+            center[0] + radius * Math.sin(i),
+            center[0] - radius * Math.cos(i)
         );
     }
     cvs.stroke();
@@ -30,7 +34,10 @@ function dorw(){
 }
 
 function loop(){
-    // 描画のクリア
-    // cvs.clearRect(0, 0, 640, 480);
+    // starをなぞり続ける(赤)
+    cvs.beginPath();
+    cvs.strokeStyle = 'red';
 
+
+    window.requestAnimationFrame((ts) => loop(ts))
 }
