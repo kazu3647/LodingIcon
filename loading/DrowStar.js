@@ -1,6 +1,7 @@
-onload = function() {
+window.addEventListener("DOMContentLoaded", function() {
+    console.log("DrowStar!!");
     draw();
-};
+});
 
 var cvs;
 var length = 30;
@@ -19,7 +20,7 @@ function draw(){
     cvs = canvas.getContext('2d');
 
     // starの描画をする(黒)
-    cvs.clearRect(0, 200, 200, 400);
+    // cvs.clearRect(0, 200, 200, 400);
     cvs.beginPath();
     for (let i = 0; i <= 4*Math.PI; i += 4*Math.PI/5){
         cvs.lineTo(

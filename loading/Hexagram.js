@@ -4,9 +4,10 @@ var center = [100, 100];
 var radius = 100;
 var angle = Math.PI / 2;
 
-onload = function() {
+window.addEventListener("DOMContentLoaded", function() {
+    console.log("Hexagram!!");
     draw();
-};
+});
 
 function draw() {
     var canvas = document.getElementById('Hexagram');
@@ -48,6 +49,6 @@ function loop(timeStamp) {
     }
 
     // 繰り返す
-    window.requestAnimationFrame((ts) => loop(ts));
+    // window.requestAnimationFrame((ts) => loop(ts));
 
 }
