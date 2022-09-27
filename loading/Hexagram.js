@@ -5,11 +5,10 @@ var radius = 100;
 var angle = Math.PI / 2;
 
 window.addEventListener("DOMContentLoaded", function() {
-    console.log("Hexagram!!");
-    draw();
+    draw1();
 });
 
-function draw() {
+function draw1() {
     var canvas = document.getElementById('Hexagram');
     if (!canvas || !canvas.getContext) {
         return false;
@@ -17,10 +16,10 @@ function draw() {
     cvs = canvas.getContext('2d');
 
     // ここから描画を開始
-    window.requestAnimationFrame((ts) => loop(ts));
+    window.requestAnimationFrame((ts) => loop1(ts));
 }
 
-function loop(timeStamp) {
+function loop1(timeStamp) {
     // 描画のクリア
     cvs.clearRect(0, 0, 200, 200);
 
@@ -48,6 +47,7 @@ function loop(timeStamp) {
         // cvs.fill();
     }
 
+    console.log("Hexagram!!");
     // 繰り返す
     // window.requestAnimationFrame((ts) => loop(ts));
 

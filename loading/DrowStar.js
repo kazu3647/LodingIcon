@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", function() {
-    console.log("DrowStar!!");
     draw();
 });
 
@@ -29,9 +28,10 @@ function draw(){
         );
     }
     cvs.stroke();
+    console.log("DrowStar!!");
 
     // ここから描画を開始
-    window.requestAnimationFrame((ts) => loop(ts));
+    // window.requestAnimationFrame((ts) => loop(ts));
 }
 
 function loop(){
